@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -118,6 +120,24 @@ public class Controller {
     private void initialize(){
         products.getItems().addAll(Main.getProducts().values());
         products.refresh();
+
+        oldPriceField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d{0,4}([\\.]\\d{0,2})?")) {
+                    oldPriceField.setText(oldValue);
+                }
+            }
+        });
+
+        newPriceField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d0,4}([\\.]\\d{0,2})?")) {
+                    newPriceField.setText(oldValue);
+                }
+            }
+        });
 
         updateButton.setDisable(true);
     }
