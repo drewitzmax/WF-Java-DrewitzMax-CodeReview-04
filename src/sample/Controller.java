@@ -11,7 +11,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 
 
 public class Controller {
@@ -84,6 +87,29 @@ public class Controller {
         ));
         products.refresh();
         clear();
+    }
+
+    public void save(){
+        String data = "";
+        for(Product p: products.getItems()){
+            data += p.toString() +"\n";
+        }
+        File dir = new File("test");
+        dir.mkdirs();
+        File testFile = new File( dir,"testFile.txt");
+        try {
+            testFile.createNewFile();
+        }catch (Exception e){
+            System.out.println("Couldn't create new file");
+        }
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(testFile));
+            writer.write(data);
+
+            writer.close();
+        }catch(Exception e){
+            System.out.println("Writing error");
+        }
     }
 
     @FXML

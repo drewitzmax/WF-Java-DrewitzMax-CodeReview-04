@@ -70,6 +70,10 @@ public class Product {
         return productName + " from " + oldPrice + "€ to " + newPrice +"€";
     }
 
+    public String toJSON(){
+        return "{ 'productID':" +productID +"";
+    }
+
     public String getImgPath(){
         return imagePath + imgName;
     }

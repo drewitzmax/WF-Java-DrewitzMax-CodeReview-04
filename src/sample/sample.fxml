@@ -55,17 +55,22 @@
       <TextArea fx:id="describtion" prefHeight="200.0" prefWidth="200.0" />
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-                      <Button onAction="#update" fx:id="updateButton" text="Update">
+                      <Button fx:id="updateButton" onAction="#update" text="Update">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" fx:id="clearButton" onAction="#clear" text="Clear">
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clear" text="Clear">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" fx:id="addButton" onAction="#add" text="Add">
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" text="Add">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#save" text="Save Report">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
