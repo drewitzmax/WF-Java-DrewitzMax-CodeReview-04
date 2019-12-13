@@ -4,9 +4,4 @@
 
 .text-field{
     -fx-background-color: darkkhaki;
-    -fx-hgap: 20px;
-    -fx-min-height: 20px;
-}
-.label{
-    -fx-min-height: 20px;
 }
